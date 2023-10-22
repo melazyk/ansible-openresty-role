@@ -17,5 +17,5 @@
 # with a default server listening on 80, those agents aren't orphaned as they will
 # cause subsequent attempts to start nginx to fail with a conflict on 80
 - name: stop process started by install
-  when: install | changed
+  when: install is changed
   service: name=openresty state=stopped
